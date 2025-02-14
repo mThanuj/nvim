@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		"simrat39/rust-tools.nvim",
 	},
 	config = function()
 		local mason = require("mason")

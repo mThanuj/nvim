@@ -35,3 +35,5 @@ opt.undofile = true
 opt.showmode = false
 
 opt.scrolloff = 15
+
+opt.guicursor = ""
