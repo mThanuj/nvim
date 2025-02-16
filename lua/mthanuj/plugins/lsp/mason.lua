@@ -32,6 +32,7 @@ return {
 				"emmet_ls",
 				"prismals",
 				"pyright",
+				"gopls",
 			},
 		})
 
@@ -43,6 +44,8 @@ return {
 				"black",
 				"eslint_d",
 				"pylint",
+				"delve",
+				"gopls",
 			},
 		})
 	end,

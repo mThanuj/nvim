@@ -4,6 +4,8 @@ local keymap = vim.keymap
 
 keymap.set("i", "<ESC>", "<ESC>l", { desc = "QOL" })
 keymap.set("n", "<ESC>", "<CMD>nohl<CR>", { desc = "Clear Search Highlights" })
+keymap.set("n", "<C-b>", "^", { desc = "Go to the beginning of the line" })
+keymap.set("n", "<C-e>", "$", { desc = "Go to the end of the line" })
 
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
@@ -32,7 +34,8 @@ keymap.set("n", "<leader>bo", "<CMD>BufferLineCloseOthers<CR>", { desc = "Delete
 keymap.set("n", "H", "<CMD>BufferLineCyclePrev<CR>", { desc = "Cycle to Previous Buffer" })
 keymap.set("n", "L", "<CMD>BufferLineCycleNext<CR>", { desc = "Cycle to Next Buffer" })
 keymap.set("n", "<leader>bp", "<CMD>BufferLinePick<CR>", { desc = "Pick a Specific Buffer" })
-keymap.set("n", "<leader>bd", "<CMD>BufferLinePickClose<CR>", { desc = "Pick a Specific Buffer to Close" })
+keymap.set("n", "<leader>bc", "<CMD>BufferLinePickClose<CR>", { desc = "Pick a Specific Buffer to Close" })
+keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "Delete Current Buffer" })
 
 keymap.set("n", "<leader>dt", "<CMD>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
 keymap.set("n", "<leader>dc", "<CMD>DapContinue<CR>", { desc = "Continue Debugging" })
