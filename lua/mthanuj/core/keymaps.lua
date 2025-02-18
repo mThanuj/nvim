@@ -27,8 +27,8 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find s
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find Keymaps" })
 
-keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
-keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
+keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" })
+keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" })
 
 keymap.set("n", "<leader>bo", "<CMD>BufferLineCloseOthers<CR>", { desc = "Delete Other Buffers" })
 keymap.set("n", "H", "<CMD>BufferLineCyclePrev<CR>", { desc = "Cycle to Previous Buffer" })
