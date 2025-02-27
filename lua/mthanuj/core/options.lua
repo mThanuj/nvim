@@ -4,7 +4,7 @@ local opt = vim.opt
 
 vim.g.have_nerd_font = true
 
-opt.relativenumber = true
+opt.relativenumber = false
 opt.number = true
 
 opt.tabstop = 2

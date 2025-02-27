@@ -13,6 +13,14 @@ return {
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local keymap = vim.keymap
 
+		local on_attach = function(_, bufnr)
+			require("tailwindcss-colors").buf_attach(bufnr)
+		end
+
+		lspconfig["tailwindcss"].setup({
+			on_attach = on_attach,
+		})
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
