@@ -88,3 +88,6 @@ keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic'
 keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic' })
 
 keymap.set('n', '<leader>gf', '<CMD>GrugFar<CR>', { desc = '[G]rug [F]ar' })
+
+keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { noremap = true, silent = true })
+keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { noremap = true, silent = true })
