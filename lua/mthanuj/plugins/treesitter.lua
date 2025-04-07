@@ -1,22 +1,22 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
+  'nvim-treesitter/nvim-treesitter',
+  build = ':TSUpdate',
   config = function()
-    require("nvim-treesitter.configs").setup({
+    require('nvim-treesitter.configs').setup {
       highlight = {
         enable = true,
       },
       indent = { enable = true },
       modules = {},
-      sync_install = true,
+      sync_install = false,
       auto_install = true,
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<CR>",
-          node_incremental = "<CR>",
+          init_selection = '<CR>',
+          node_incremental = '<CR>',
         },
       },
-    })
+    }
   end,
 }

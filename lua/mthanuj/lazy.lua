@@ -1,4 +1,5 @@
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ','
 vim.opt.termguicolors = true
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -11,8 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-
-require("lazy").setup({ { import = "mthanuj.plugins" } }, {
+require('lazy').setup({ { import = 'mthanuj.plugins' } }, {
   checker = {
     enabled = true,
     notify = false,
