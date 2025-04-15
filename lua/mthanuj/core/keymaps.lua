@@ -26,8 +26,8 @@ keymap.set('n', '<right>', '<cmd>echo "Dont be a pussy. Use l to move!!"<CR>')
 keymap.set('n', '<up>', '<cmd>echo "Dont be a pussy. Use k to move!!"<CR>')
 keymap.set('n', '<down>', '<cmd>echo "Dont be a pussy. Use j to move!!"<CR>')
 
-keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
@@ -81,5 +81,33 @@ keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic' })
 keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic' })
+keymap.set('n', 'K', vim.lsp.buf.hover, {})
+keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+keymap.set('n', 'gr', vim.lsp.buf.references, {})
+keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+keymap.set('n', '<space>rn', vim.lsp.buf.rename, {})
 
 keymap.set('n', '<leader>gf', '<CMD>GrugFar<CR>', { desc = '[G]rug [F]ar' })
+
+local dap = require 'dap'
+local dapui = require 'dapui'
+
+keymap.set('n', '<M-l>', dap.continue, { desc = 'Start/Continue Debugging' })
+
+keymap.set('n', '<leader>do', dap.step_over, { desc = 'Step Over' })
+
+keymap.set('n', '<M-j>', dap.step_into, { desc = 'Step Into' })
+
+keymap.set('n', '<M-k>', dap.step_out, { desc = 'Step Out' })
+
+keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Toggle Breakpoint' })
+
+keymap.set('n', '<leader>B', function()
+  dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+end, { desc = 'Set Conditional Breakpoint' })
+
+keymap.set('n', '<leader>dr', dap.repl.open, { desc = 'Open REPL' })
+
+keymap.set('n', '<leader>dl', dap.run_last, { desc = 'Run Last Debugging Session' })
+
+keymap.set('n', '<leader>du', dapui.toggle, { desc = 'Toggle DAP UI' })

@@ -7,6 +7,9 @@ return {
       }
     end,
   },
+  -- {
+  --   'mfussenegger/nvim-jdtls',
+  -- },
   {
     'williamboman/mason-lspconfig.nvim',
     config = function()
@@ -18,6 +21,7 @@ return {
           'gopls',
           'html',
           'cssls',
+          'jdtls',
           'emmet_language_server',
           'tailwindcss',
           'ts_ls',
@@ -38,6 +42,7 @@ return {
     'neovim/nvim-lspconfig',
     event = 'BufReadPre',
     config = function()
+      require('java').setup()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -48,6 +53,9 @@ return {
         capabilities = capabilities,
       }
       lspconfig.bashls.setup {
+        capabilities = capabilities,
+      }
+      lspconfig.jdtls.setup {
         capabilities = capabilities,
       }
       lspconfig.lua_ls.setup {
