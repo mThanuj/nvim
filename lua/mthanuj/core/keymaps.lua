@@ -26,10 +26,6 @@ keymap.set('n', '<right>', '<cmd>echo "Dont be a pussy. Use l to move!!"<CR>')
 keymap.set('n', '<up>', '<cmd>echo "Dont be a pussy. Use k to move!!"<CR>')
 keymap.set('n', '<down>', '<cmd>echo "Dont be a pussy. Use j to move!!"<CR>')
 
-keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 keymap.set('n', '-', '<CMD>Oil --float<CR>', {})
 
@@ -47,6 +43,7 @@ keymap.set('n', '<leader>fz', ':Telescope zoxide list<CR>', { desc = '[F]ind [Z]
 keymap.set('n', '<leader>fc', ':Telescope colorscheme<CR>', { desc = '[F]ind [C]olorscheme' })
 keymap.set('n', '<leader>fh', telescopeBuiltin.help_tags, { desc = '[F]ind [H]elp Tags' })
 keymap.set('n', '<leader>fg', telescopeBuiltin.git_files, { desc = '[F]ind [G]it Files' })
+keymap.set('n', '<leader>ft', ':TodoTelescope<CR>', { desc = '[F]ind [T]odos' })
 
 local harpoon = require 'harpoon'
 
@@ -55,19 +52,6 @@ keymap.set('n', '<leader>a', function()
 end)
 keymap.set('n', '<C-e>', function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
-end)
-
-keymap.set('n', '<M-h>', function()
-  harpoon:list():select(1)
-end)
-keymap.set('n', '<M-j>', function()
-  harpoon:list():select(2)
-end)
-keymap.set('n', '<M-k>', function()
-  harpoon:list():select(3)
-end)
-keymap.set('n', '<M-l>', function()
-  harpoon:list():select(4)
 end)
 
 keymap.set('n', '<C-S-P>', function()
